@@ -319,9 +319,9 @@ class app(CTk):
             # creates SMTP session
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login("sreeman417@gmail.com", "tpaz nkzx zota sjkh")
+            s.login("<your mail id which will send otp>", "<add your mail key for the mail id that sends otp>")
             message = "Your account got logged in"
-            s.sendmail("sreeman417@gmail.com", str(l[self.e1.get()][1]), message)
+            s.sendmail("<your mail id which will send otp>", str(l[self.e1.get()][1]), message)
             s.quit()
             app.mainpage(self,self.e1.get())
     def framemover(self):
@@ -361,9 +361,9 @@ class app(CTk):
             number = random.randrange(1000,10000)
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login("sreeman417@gmail.com", "tpaz nkzx zota sjkh")
-            message = str(number)
-            s.sendmail("sreeman417@gmail.com", str(l[self.e1.get()][1]), message)
+            s.login("<your mail id which will send otp>", "<add your mail key for the mail id that sends otp>")
+            message = "Your account got logged in"
+            s.sendmail("<your mail id which will send otp>", str(l[self.e1.get()][1]), message)
             s.quit()
     def checker5(self):
         global username
@@ -596,9 +596,9 @@ class app(CTk):
             number = random.randrange(1000,10000)
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login("yourmail@gmail.com", "password key")
+            s.login("<yourmail@gmail.com>", "<password key>")
             message = str(number)
-            s.sendmail("sreeman417@gmail.com", str(self.email.get()), message)
+            s.sendmail("<yourmail@gmail.com>", str(self.email.get()), message)
             s.quit()
             for i in self.frame.winfo_children():
                 i.place_forget()
@@ -1187,8 +1187,8 @@ class app(CTk):
             message = "Thank you for booking ticket in our interface\nDetails\n" + message
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login("sreeman417@gmail.com", "tpaz nkzx zota sjkh")
-            s.sendmail("sreeman417@gmail.com", str(l[u][1]),message)
+            s.login("<your mail id to send otp>", "<your mail id's password key>")
+            s.sendmail("<your mail id to send otp>", str(l[u][1]),message)
             s.quit()
             self.lmo.extend(self.tickets)
             v =[]
@@ -1455,6 +1455,7 @@ with open("remem.dat","rb") as f:
             k.append(s)
         except EOFError:
             break
+print(k)
 try:
     app(s[0])
 except NameError:
